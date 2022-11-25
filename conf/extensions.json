@@ -1,0 +1,246 @@
+{
+  "@type": "EnvironmentExtensions",
+  "connections": {
+    "@type": "Connections",
+    "connection": [
+      {
+        "@type": "Connection",
+        "field": [
+          {
+            "@type": "field",
+            "id": "username",
+            "valueFrom": "ExtensionDbusername",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "password",
+            "valueFrom": "ExtensionDbpassword",
+            "usesEncryption": "true",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "host",
+            "valueFrom": "ExtensionDbhost",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "dbname",
+            "valueFrom": "ExtensionDbname",
+            "usesEncryption": "false",
+            "useDefault": false
+          }
+        ],
+        "id": "626e5b5c-62ce-409a-8d6f-1cf827c91d36",
+        "name": "[GBI] Microsoft Azure SQL Database"
+      },
+      {
+        "@type": "Connection",
+        "field": [
+          {
+            "@type": "field",
+            "id": "authType",
+            "valueFrom": "ExtensionSTSSSHSFTPauthType",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "host",
+            "valueFrom": "ExtensionSTSSSHSFTPhost",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "username",
+            "valueFrom": "ExtensionSTSSSHSFTPusername",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "password",
+            "valueFrom": "ExtensionSTSSSHSFTPpassword",
+            "usesEncryption": "true",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "port",
+            "valueFrom": "ExtensionSTSSSHSFTPport",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "prvkeyContent",
+            "valueFrom": "ExtensionSTSSSHSFTPprvkeyContent",
+            "usesEncryption": "false",
+            "useDefault": false
+          },
+          {
+            "@type": "field",
+            "id": "pubkeyContent",
+            "valueFrom": "ExtensionSTSSSHSFTPpubkeyContent",
+            "usesEncryption": "false",
+            "useDefault": false
+          }
+        ],
+        "id": "baa068f4-9932-4133-8c97-396d2fb250dd",
+        "name": "[EXN] STS SSH SFTP V2"
+      },
+      {
+        "@type": "Connection",
+        "field": [
+          {
+            "@type": "Field",
+            "id": "baseUrl",
+            "encryptedValueSet": false,
+            "usesEncryption": false,
+            "componentOverride": false,
+            "useDefault": true
+          },
+          {
+            "@type": "Field",
+            "id": "oauthOptions/OAuth2Config/credentials/@clientId",
+            "encryptedValueSet": false,
+            "usesEncryption": false,
+            "componentOverride": false,
+            "useDefault": true
+          },
+          {
+            "@type": "Field",
+            "id": "oauthOptions/OAuth2Config/credentials/@clientSecret",
+            "encryptedValueSet": false,
+            "usesEncryption": false,
+            "componentOverride": false,
+            "useDefault": true
+          }
+        ],
+        "id": "c1e5fcd8-36ef-405e-b24e-b695aceeaf95",
+        "name": "[GPWC] ServiceNow REST"
+      },
+      {
+        "@type": "Connection",
+        "field": [
+          {
+            "@type": "Field",
+            "id": "host",
+            "encryptedValueSet": false,
+            "usesEncryption": false,
+            "componentOverride": false,
+            "useDefault": true
+          },
+          {
+            "@type": "Field",
+            "id": "port",
+            "encryptedValueSet": false,
+            "usesEncryption": false,
+            "componentOverride": false,
+            "useDefault": true
+          },
+          {
+            "@type": "Field",
+            "id": "user",
+            "encryptedValueSet": false,
+            "usesEncryption": false,
+            "componentOverride": false,
+            "useDefault": true
+          },
+          {
+            "@type": "Field",
+            "id": "password",
+            "encryptedValueSet": false,
+            "usesEncryption": true,
+            "componentOverride": false,
+            "useDefault": true
+          }
+        ],
+        "id": "30de42b2-bfca-48e0-89f7-13554286d980",
+        "name": "[FWK] Mail"
+      }
+    ]
+  },
+  "crossReferences": {
+    "@type": "CrossReferences",
+    "crossReference": [
+      {
+        "@type": "CrossReference",
+        "CrossReferenceRows": {
+          "@type": "",
+          "row": []
+        }, 
+        "id": "b2f62de0-5d40-4a82-9ed2-e9b6eb8bdb87",
+        "overrideValues": false,
+        "name": "CRT_Greencross_Errors"
+      },
+      {
+        "@type": "CrossReference",
+        "CrossReferenceRows": {
+          "@type": "",
+          "row": "valueCSVCRT_ClearEmails"
+        },
+        "id": "7f7070b3-a22f-4dc8-842a-1123a72af318",
+        "overrideValues": true,
+        "name": "CRT_ClearEmails"
+      }
+    ]
+  },
+  "processProperties": {
+    "@type": "OverrideProcessProperties",
+    "ProcessProperty": [
+      {
+        "@type": "OverrideProcessProperty",
+        "ProcessPropertyValue": [
+          {
+            "@type": "ProcessPropertyValue",
+            "label": "remoteSFTPOutLocation",
+            "key": "fab573a8-82e9-47ad-b769-353aca62db29",
+            "valueFrom": "ExtensionPPremoteSFTPOutLocation",
+            "encryptedValueSet": false,
+            "useDefault": false
+          },
+          {
+            "@type": "ProcessPropertyValue",
+            "label": "companyName",
+            "key": "9c66df7b-3ead-4bff-b2d0-1bcccee3eb33",
+            "valueFrom": "ExtensionPPcompanyName",
+            "encryptedValueSet": false,
+            "useDefault": false
+          },
+          {
+            "@type": "ProcessPropertyValue",
+            "label": "fileName",
+            "key": "6ed4221d-9903-40df-bdad-43c187b01eaf",
+            "valueFrom": "ExtensionPPfileName",
+            "encryptedValueSet": false,
+            "useDefault": false
+          },
+          {
+            "@type": "ProcessPropertyValue",
+            "label": "skippedRecordsToEmail",
+            "key": "c9cf72ff-0a66-40b4-b8aa-58a80c5eb2af",
+            "valueFrom": "ExtensionPPskippedRecordsToEmail",
+            "encryptedValueSet": false,
+            "useDefault": false
+          }
+        ],
+        "id": "e0b1c701-ac58-443d-81ef-4dba366b5ef2",
+        "name": "PP_INT128"
+      }
+    ]
+  },
+  "properties": {
+    "@type": "",
+    "property": []
+  },
+  "environmentId": "0a5043e9-b3d1-4723-b5a1-7c12b181ff98",
+  "partial": "true",
+  "extensionGroupId": "",
+  "id": "0a5043e9-b3d1-4723-b5a1-7c12b181ff98"
+}

@@ -1,0 +1,35 @@
+#####################################
+# Deployment Pipeline for Dummy API #
+#####################################
+
+parameters:
+  - name: packageVersion
+    displayName: Package Version, leave 0 for a new deployment OR put the Build Number to reuse an existing package. For instance put DUMMY-API.20220504.1.BUILD
+    type: string
+    default: 0
+  - name: notes
+    displayName: Notes
+    type: string
+    default: 'Deploy Boomi processes'
+  - name: deployToProd
+    type: boolean
+    default: false
+
+trigger:
+  - master
+
+pool:
+  name: ubuntu-with-xmlint
+  demands:
+    - agent.os -equals Linux
+
+extends:
+  template: templates/base_deploy.yaml
+  parameters:
+    packageVersion: ${{ parameters.packageVersion }}
+    packageName: 'DUMMY-API'
+    componentIds: '605aba66-9599-4b1c-9b24-d3548bcd0f20'
+    test_componentIds: '421fd637-9343-4470-998c-c52a2b0d7545'
+    notes: ${{ parameters.notes }}
+    postmanCollection: ''
+    sleepInMinutes: 1

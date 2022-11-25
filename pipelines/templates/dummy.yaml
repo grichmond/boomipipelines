@@ -1,0 +1,24 @@
+###############################
+# Call API Template for Boomi #
+###############################
+
+parameters:
+  #####################
+  # Common parameters #
+  #####################
+  h1 : ''
+  h2 : ''
+  baseURL : ''
+  authToken : ''
+  VERBOSE : ''
+  SLEEP_TIMER : ''
+  WORKSPACE : ''
+  SCRIPTS_HOME : ''
+  BUILD_USER_ID : ''
+  #######################
+  # Specific parameters #
+  #######################
+  postmanCollection : ''
+
+steps:
+  - echo "Skipping step"

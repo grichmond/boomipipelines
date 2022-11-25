@@ -1,0 +1,29 @@
+##############################################
+# Deployment Pipeline for Components Network #
+##############################################
+
+parameters:
+  - name: packageVersion
+    displayName: Package Version, leave 0 for a new deployment OR put the Build Number to reuse an existing package. For instance put COMPONENTS-NETWORK.20220128.1.BUILD
+    type: string
+    default: 0
+  - name: notes
+    displayName: Notes
+    type: string
+    default: 'Component Network Packages'
+
+trigger:
+  - master
+
+pool:
+  name: Default
+  demands:
+    - agent.os -equals Linux
+
+extends:
+  template: templates/base_deploy.yaml
+  parameters:
+    packageVersion: ${{ parameters.packageVersion }}
+    packageName: 'COMPONENTS-NETWORK'
+    componentIds: '0925d5da-4312-4a70-9735-b8ba6c3c050a'
+    notes: ${{ parameters.notes }}

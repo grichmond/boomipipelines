@@ -1,0 +1,34 @@
+#####################################
+# Deployment Pipeline for Dummy API #
+#####################################
+
+parameters:
+  - name: packageVersion
+    displayName: Package Version, leave 0 for a new deployment OR put the Build Number to reuse an existing package. For instance put DUMMY-API.20220504.1.BUILD
+    type: string
+    default: 0
+  - name: notes
+    displayName: Notes
+    type: string
+    default: 'Deploy Boomi processes'
+  - name: deployToProd
+    type: boolean
+    default: false
+
+trigger:
+  - master
+
+pool:
+  name: ubuntu-with-xmlint
+  demands:
+    - agent.os -equals Linux
+
+jobs:
+- deployment: deployWeb
+  displayName: Deploy web pkg
+  environment: 1_BOOMI-ANZ_DEV    # create environment and/or record deployments
+  strategy:                  # runOnce/blue green/rolling/canary, with lifecycle hooks viz, pre/post healthcheck, swap etc
+    runOnce:                 # default strategy
+      deploy:
+        steps:       
+        - script: echo deploy web pkg
